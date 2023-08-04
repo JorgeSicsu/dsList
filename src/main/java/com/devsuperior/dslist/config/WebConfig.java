@@ -17,7 +17,7 @@ public class WebConfig {
 		return new WebMvcConfigurer() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/**").allowedMethods("*").allowedOrigins(corsOrigins);
+				registry.addMapping("/**").allowedMethods("GET,OPTIONS,PATCH,DELETE,POST,PUT").allowedOrigins("*").allowedCredentials("true").allowHeaders("X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, Authorization");
 			}
 		};
 	}
